@@ -1,0 +1,49 @@
+# The Basic Model Interface (BMI)
+
+_meta:
+  title: Basic Model Interface
+  version: 2.1
+
+initialize:
+  args:
+    - name: config_file
+      intent: in
+      type: string
+      rank: 0
+  return:
+    c: int
+    cxx:
+    fortran: integer
+    python:
+
+get_value:
+  args:
+    - name: name
+      intent: in
+      type: string
+      rank: 0
+    - name: dest
+      type:
+      intent: inout
+      rank: 1
+  return:
+    c: int
+    cxx:
+    fortran: integer
+    python: numpy.ndarray
+
+get_grid_shape:
+  args:
+    - name: grid
+      intent: in
+      type: integer
+      rank: 0
+    - name: shape
+      intent: inout
+      type: integer
+      rank: 1
+  return:
+    c: int
+    cxx:
+    fortran: integer
+    python: numpy.ndarray
